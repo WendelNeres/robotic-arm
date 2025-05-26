@@ -22,5 +22,15 @@ void setup() {
 }
 
 void loop() {
+  int valorPotenciometroBase = map(mediaAnalogica(pinServoBase), 0, 1023, 0, 180);
+  int valorPotenciometroDireito = map(mediaAnalogica(pinServoLadoDireito), 0, 1023, 0, 180);
+  int valorPotenciometroEsquerdo = map(mediaAnalogica(pinServoLadoEsquerdo), 0, 1023, 0, 180);
+  int valorPotenciometroGarra = map(mediaAnalogica(pinServoGarra), 0, 1023, 0, 180);
 
+  servoBase.write(valorPotenciometroBase);
+  servoLadoDireito.write(valorPotenciometroDireito);
+  servoLadoEsquerdo.write(valorPotenciometroEsquerdo);
+  servoGarra.write(valorPotenciometroGarra);
+
+  delay(20); // Pequeno atraso geral para estabilidade
 }
