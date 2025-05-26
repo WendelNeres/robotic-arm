@@ -10,7 +10,9 @@ Servo servoLadoDireito;
 Servo servoLadoEsquerdo;
 Servo servoGarra;
 
-
+int mediaAnalogica(int pino) {
+  return (analogRead(pino) + analogRead(pino) + analogRead(pino)) / 3;
+}
 
 void setup() {
   servoBase.attach(3);
